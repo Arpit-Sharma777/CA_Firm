@@ -736,8 +736,20 @@ button *,
     justify-content: center;
     padding: 0;
     align-self: end;
-    margin-left: 560px;
-    margin-top: -510px;
+}
+
+@media (min-width: 1025px) {
+    .hero-image {
+        margin-left: 560px;
+        margin-top: -510px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero-image {
+        margin-left: 0;
+        margin-top: 0;
+    }
 }
 
 .hero-image img {
@@ -1140,8 +1152,9 @@ button *,
     margin-left: auto;
   }
   
+  /* Removed mobile-menu-button display to avoid conflict */
   .mobile-menu-button {
-    display: block;
+    display: none !important;
   }
   
   .hero-title {
@@ -1207,9 +1220,6 @@ body {
 
 /* Ensure section headers and titles remain visible */
 
-isection-title{
-    
-}
 
 
 /* Remove obsolete section-based rules */
