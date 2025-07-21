@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,239 +14,345 @@
     <link rel="icon" type="image/png" href="./CA India Logo-.jpg">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js"></script>
-    <meta name="description" content="Professional chartered accountancy firm providing expert financial services and business advisory">
-    <meta name="keywords" content="Chartered Accountant,CA,ITR, Bangalore, GST, Tax, Audit, Financial Advisory, ROC, Bookkeeping, India, Abhijeet Choubey, Associates,Jigani APC Circle,560105,Karnataka,India">
+    <meta name="description"
+        content="Professional chartered accountancy firm providing expert financial services and business advisory">
+    <meta name="keywords"
+        content="Chartered Accountant,CA,ITR, Bangalore, GST, Tax, Audit, Financial Advisory, ROC, Bookkeeping, India, Abhijeet Choubey, Associates,Jigani APC Circle,560105,Karnataka,India">
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Abhijeet Choubey and Associates - Chartered Accountants">
-    <meta property="og:description" content="Professional chartered accountancy firm providing expert financial services and business advisory.">
+    <meta property="og:description"
+        content="Professional chartered accountancy firm providing expert financial services and business advisory.">
     <meta property="og:image" content="CA India Logo.png">
     <meta property="og:url" content="https://www.abhijeetchoubyandassociates.com">
     <meta property="og:type" content="website">
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "AccountingService",
-      "name": "Abhijeet Choubey and Associates",
-      "image": "https://www.abhijeetchoubeyandassociates.com/CA%20India%20Logo-.jpg",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Jigani APC Circle",
-        "addressLocality": "Bangalore",
-        "addressRegion": "Karnataka",
-        "postalCode": "560105",
-        "addressCountry": "IN"
-      },
-      "telephone": "+91 81607 12491",
-      "email": "caabhijeetchouby@gmail.com",
-      "url": "https://www.abhijeetchoubyandassociates.com",
-      "logo": "https://www.abhijeetchoubyandassociates.com/CA%20India%20Logo-.jpg"
-    }
+        {
+            "@context": "https://schema.org",
+            "@type": "AccountingService",
+            "name": "Abhijeet Choubey and Associates",
+            "image": "https://www.abhijeetchoubeyandassociates.com/CA%20India%20Logo-.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Jigani APC Circle",
+                "addressLocality": "Bangalore",
+                "addressRegion": "Karnataka",
+                "postalCode": "560105",
+                "addressCountry": "IN"
+            },
+            "telephone": "+91 81607 12491",
+            "email": "caabhijeetchouby@gmail.com",
+            "url": "https://www.abhijeetchoubyandassociates.com"
+        }
     </script>
     <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-    
+
     <style>
-      body {
-        font-family: 'Merriweather', 'Inter', serif;
-      }
-      h1, h2, h3, h4, h5, h6, .section-title, .hero-title {
-        font-family: 'Inter', 'Merriweather', sans-serif;
-      }
-      /* Loader CSS start */
-      .loader-container {
-          position: fixed;
-          top: 0; left: 0; right: 0; bottom: 0;
-          width: 100vw;
-          height: 100vh;
-          background: #000;
-          z-index: 9999;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-      }
-      .logo-wrapper {
-          position: relative;
-          width: 120px;
-          height: 120px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-      }
-      .logo {
-          font-size: 64px;
-          font-weight: bold;
-          color: #fff;
-          text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-          animation: pulse 2s ease-in-out infinite;
-          position: relative;
-          z-index: 10;
-      }
-      .letter-c {
-          display: inline-block;
-          animation: slideInLeft 1s ease-out, float 3s ease-in-out infinite 1s;
-      }
-      .letter-a {
-          display: inline-block;
-          animation: slideInRight 1s ease-out, float 3s ease-in-out infinite 1.5s;
-      }
-      .circle-1 {
-          position: absolute;
-          width: 100px;
-          height: 100px;
-          border: 3px solid rgba(255, 255, 255, 0.3);
-          border-radius: 50%;
-          animation: rotate 4s linear infinite;
-      }
-      .circle-2 {
-          position: absolute;
-          width: 140px;
-          height: 140px;
-          border: 2px solid rgba(255, 255, 255, 0.2);
-          border-top: 2px solid #fff;
-          border-radius: 50%;
-          animation: rotate 3s linear infinite reverse;
-      }
-      .circle-3 {
-          position: absolute;
-          width: 180px;
-          height: 180px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-left: 1px solid rgba(255, 255, 255, 0.4);
-          border-radius: 50%;
-          animation: rotate 6s linear infinite;
-      }
-      .particle {
-          position: absolute;
-          width: 4px;
-          height: 4px;
-          background: #fff;
-          border-radius: 50%;
-          animation: particle-float 2s ease-in-out infinite;
-      }
-      .particle:nth-child(1) {
-          top: 20%;
-          left: 30%;
-          animation-delay: 0s;
-      }
-      .particle:nth-child(2) {
-          top: 70%;
-          right: 20%;
-          animation-delay: 0.5s;
-      }
-      .particle:nth-child(3) {
-          bottom: 30%;
-          left: 20%;
-          animation-delay: 1s;
-      }
-      .particle:nth-child(4) {
-          top: 40%;
-          right: 30%;
-          animation-delay: 1.5s;
-      }
-      .loading-text {
-          position: absolute;
-          bottom: -60px;
-          left: 50%;
-          transform: translateX(-50%);
-          color: rgba(255, 255, 255, 0.8);
-          font-size: 16px;
-          font-weight: 300;
-          letter-spacing: 2px;
-          animation: textFade 2s ease-in-out infinite;
-      }
-      .progress-bar {
-          position: absolute;
-          bottom: -80px;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 120px;
-          height: 2px;
-          background: rgba(255, 255, 255, 0.2);
-          border-radius: 1px;
-          overflow: hidden;
-      }
-      .progress-fill {
-          height: 100%;
-          background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0.5));
-          border-radius: 1px;
-          animation: progress 3s ease-in-out infinite;
-      }
-      @keyframes pulse {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.05); }
-      }
-      @keyframes slideInLeft {
-          0% { transform: translateX(-50px); opacity: 0; }
-          100% { transform: translateX(0); opacity: 1; }
-      }
-      @keyframes slideInRight {
-          0% { transform: translateX(50px); opacity: 0; }
-          100% { transform: translateX(0); opacity: 1; }
-      }
-      @keyframes float {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-5px); }
-      }
-      @keyframes rotate {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-      }
-      @keyframes particle-float {
-          0%, 100% { 
-              transform: translateY(0px) scale(1);
-              opacity: 0.4;
-          }
-          50% { 
-              transform: translateY(-10px) scale(1.2);
-              opacity: 1;
-          }
-      }
-      @keyframes textFade {
-          0%, 100% { opacity: 0.6; }
-          50% { opacity: 1; }
-      }
-      @keyframes progress {
-          0% { width: 0%; }
-          70% { width: 100%; }
-          100% { width: 100%; }
-      }
-      .glass-bg {
-          position: absolute;
-          width: 160px;
-          height: 160px;
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(10px);
-          border-radius: 50%;
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          animation: glassRotate 8s linear infinite;
-      }
-      @keyframes glassRotate {
-          0% { transform: rotate(0deg) scale(1); }
-          50% { transform: rotate(180deg) scale(1.1); }
-          100% { transform: rotate(360deg) scale(1); }
-      }
-      .glow {
-          position: absolute;
-          width: 200px;
-          height: 200px;
-          background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-          border-radius: 50%;
-          animation: glow 4s ease-in-out infinite;
-      }
-      @keyframes glow {
-          0%, 100% { 
-              transform: scale(1);
-              opacity: 0.3;
-          }
-          50% { 
-              transform: scale(1.2);
-              opacity: 0.6;
-          }
-      }
-      /* Loader CSS end */
+        body {
+            font-family: 'Merriweather', 'Inter', serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .section-title,
+        .hero-title {
+            font-family: 'Inter', 'Merriweather', sans-serif;
+        }
+
+        /* Loader CSS start */
+
+        .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #000;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-wrapper {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 64px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            animation: pulse 2s ease-in-out infinite;
+            position: relative;
+            z-index: 10;
+        }
+
+        .letter-c {
+            display: inline-block;
+            animation: slideInLeft 1s ease-out, float 3s ease-in-out infinite 1s;
+        }
+
+        .letter-a {
+            display: inline-block;
+            animation: slideInRight 1s ease-out, float 3s ease-in-out infinite 1.5s;
+        }
+
+        .circle-1 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: rotate 4s linear infinite;
+        }
+
+        .circle-2 {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-top: 2px solid #fff;
+            border-radius: 50%;
+            animation: rotate 3s linear infinite reverse;
+        }
+
+        .circle-3 {
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: rotate 6s linear infinite;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            animation: particle-float 2s ease-in-out infinite;
+        }
+
+        .particle:nth-child(1) {
+            top: 20%;
+            left: 30%;
+            animation-delay: 0s;
+        }
+
+        .particle:nth-child(2) {
+            top: 70%;
+            right: 20%;
+            animation-delay: 0.5s;
+        }
+
+        .particle:nth-child(3) {
+            bottom: 30%;
+            left: 20%;
+            animation-delay: 1s;
+        }
+
+        .particle:nth-child(4) {
+            top: 40%;
+            right: 30%;
+            animation-delay: 1.5s;
+        }
+
+        .loading-text {
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            animation: textFade 2s ease-in-out infinite;
+        }
+
+        .progress-bar {
+            position: absolute;
+            bottom: -80px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 1px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #fff, rgba(255, 255, 255, 0.5));
+            border-radius: 1px;
+            animation: progress 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes slideInLeft {
+            0% {
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            0% {
+                transform: translateX(50px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes particle-float {
+
+            0%,
+            100% {
+                transform: translateY(0px) scale(1);
+                opacity: 0.4;
+            }
+
+            50% {
+                transform: translateY(-10px) scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        @keyframes textFade {
+
+            0%,
+            100% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes progress {
+            0% {
+                width: 0%;
+            }
+
+            70% {
+                width: 100%;
+            }
+
+            100% {
+                width: 100%;
+            }
+        }
+
+        .glass-bg {
+            position: absolute;
+            width: 160px;
+            height: 160px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: glassRotate 8s linear infinite;
+        }
+
+        @keyframes glassRotate {
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(180deg) scale(1.1);
+            }
+
+            100% {
+                transform: rotate(360deg) scale(1);
+            }
+        }
+
+        .glow {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: glow 4s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 0.6;
+            }
+        }
+
+        /* Loader CSS end */
     </style>
 </head>
+
 <body class="home-bg">
     <div id="loader" class="loader-container">
         <div class="glow"></div>
@@ -255,7 +362,8 @@
         <div class="circle-1"></div>
         <div class="logo-wrapper">
             <div class="logo">
-                <img src="CA India Logo.png" alt="CA India Logo - Abhijeet Choubey and Associates Chartered Accountants" style="height: 56px; width: auto; display: block; margin: 0 auto; animation: pulse 2s ease-in-out infinite; filter: drop-shadow(0 0 8px #fff);" />
+                <img src="CA India Logo.png" alt="CA India Logo - Abhijeet Choubey and Associates Chartered Accountants"
+                    style="height: 56px; width: auto; display: block; margin: 0 auto; animation: pulse 2s ease-in-out infinite; filter: drop-shadow(0 0 8px #fff);" />
             </div>
         </div>
         <div class="particle"></div>
@@ -268,518 +376,587 @@
         </div>
     </div>
     <div id="main-content" style="display:none;">
-    <!-- Navigation -->
-    <header class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">
-                    <img src="./CA India Logo.png" alt="CA India Logo - Abhijeet Choubey and Associates Chartered Accountants" class="ca-logo">
-                    <span class="firm-name">Abhijeet Choubey<br><span class="firm-subtitle">& Associates</span></span>
-                </a>
+        <!-- Navigation -->
+        <header class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">
+                        <img src="./CA India Logo.png"
+                            alt="CA India Logo - Abhijeet Choubey and Associates Chartered Accountants" class="ca-logo">
+                        <span class="firm-name">Abhijeet Choubey<br><span class="firm-subtitle">&
+                                Associates</span></span>
+                    </a>
+                </div>
+                <nav class="nav-menu">
+                    <div class="nav-item"><a href="index.html" class="nav-link active">Overview</a></div>
+                    <div class="nav-item"><a href="our-work.html" class="nav-link">Our Work</a></div>
+                    <div class="nav-item"><a href="our-people.html" class="nav-link">Our People</a></div>
+                    <div class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></div>
+                </nav>
+                <button id="mobile-menu-button" class="mobile-menu-button" aria-label="Menu">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="currentColor" />
+                    </svg>
+                </button>
             </div>
-            <nav class="nav-menu">
-                <div class="nav-item"><a href="index.html" class="nav-link active">Overview</a></div>
-                <div class="nav-item"><a href="our-work.html" class="nav-link">Our Work</a></div>
-                <div class="nav-item"><a href="our-people.html" class="nav-link">Our People</a></div>
-                <div class="nav-item">
-                    
-                    <a href="contact.html" class="nav-link">Contact Us</a>
-                </div>
-            </nav>
-            <button class="mobile-menu-button" aria-label="Menu">
-                <svg viewBox="0 0 24 24" width="24" height="24">
-                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="currentColor"/>
-                </svg>
-            </button>
-        </div>
-    </header>
-
-    <!-- Hero Section with Aurora Background -->
-    <section class="hero">
-        <div id="aurora-bg"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">Helping organizations navigate the future of financial excellence</h1>
-                    <p class="hero-subtitle">Abhijeet Choubey and Associates is a leading chartered accountancy firm providing expert financial advisory, audit, and tax services to businesses across industries.</p>
-                    <div class="hero-buttons">
-                        <a href="our-work.html" class="btn btn-primary">
-                            <span class="description">Our Services</span>
-                            <div class="ocean"></div>
-                        </a>
-                        <a href="contact.html" class="btn btn-secondary">
-                            <span class="description">Contact Us</span>
-                            <div class="ocean"></div>
-                        </a>
+        </header>
+        <!-- Hero Section with Aurora Background -->
+        <section class="hero">
+            <canvas id="aurora-bg"></canvas>
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-image">
+                        <img src="blr.png" alt="Bangalore Landmarks" />
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <div class="hero-image">
-        <img src="./tajbg1.png" alt="Professional team discussing financial strategy - Abhijeet Choubey and Associates">
-    </div>
-    <!-- Services Section -->
-    <section class="services-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Our Core Services</h2>
-                <p class="section-subtitle">Comprehensive financial and business solutions tailored to your needs</p>
-            </div>
-            <div class="services-list">
-                <!-- Service Item 1 -->
-                <div class="service-item" data-delay="100">
-                    <div class="service-card">
-                        <div class="service-image-container">
-                            <div class="service-glow"></div>
-                            <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
-                                <h3 class="service-title">Incorporation Services</h3>
-                            </div>
-                        </div>
-                        <div class="service-content">
-                            <p class="service-description">Complete assistance with company registration, legal formalities, and business setup for a smooth start to your entrepreneurial journey.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service Item 2 -->
-                <div class="service-item" data-delay="200">
-                    <div class="service-card">
-                        <div class="service-content">
-                            <p class="service-description">End-to-end GST registration, return filing, and compliance services to keep your business on track and compliant with all regulations.</p>
-                        </div>
-                        <div class="service-image-container">
-                            <div class="service-glow"></div>
-                            <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1554224155-3a58922a22c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
-                                <h3 class="service-title">GST Services</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service Item 3 -->
-                <div class="service-item" data-delay="300">
-                    <div class="service-card">
-                        <div class="service-image-container">
-                            <div class="service-glow"></div>
-                            <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
-                                <h3 class="service-title">ROC Compliance</h3>
-                            </div>
-                        </div>
-                        <div class="service-content">
-                            <p class="service-description">Comprehensive ROC filing and compliance services to ensure your business meets all regulatory requirements and stays in good standing.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service Item 4 -->
-                <div class="service-item" data-delay="400">
-                    <div class="service-card">
-                        <div class="service-content">
-                            <p class="service-description">Expert assistance with individual and corporate income tax return filing, tax planning, and optimization strategies to maximize your returns.</p>
-                        </div>
-                        <div class="service-image-container">
-                            <div class="service-glow"></div>
-                            <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
-                                <h3 class="service-title">Income Tax Return Filing</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service Item 5 -->
-                <div class="service-item" data-delay="500">
-                    <div class="service-card">
-                        <div class="service-image-container">
-                            <div class="service-glow"></div>
-                            <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
-                                <h3 class="service-title">Auditing and Assurance</h3>
-                            </div>
-                        </div>
-                        <div class="service-content">
-                            <p class="service-description">Comprehensive audit and assurance services ensuring accuracy, transparency, and compliance in all aspects of your financial reporting and operations.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service Item 6 -->
-                <div class="service-item" data-delay="600">
-                    <div class="service-card">
-                        <div class="service-content">
-                            <p class="service-description">Comprehensive project reports tailored for bank loans, funding applications, and detailed business planning to support your growth initiatives.</p>
-                        </div>
-                        <div class="service-image-container">
-                            <div class="service-glow"></div>
-                            <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
-                                <h3 class="service-title">Project Reports</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service Item 7 -->
-                <div class="service-item" data-delay="700">
-                    <div class="service-card">
-                        <div class="service-image-container">
-                            <div class="service-glow"></div>
-                            <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
-                                <h3 class="service-title">Trademarks</h3>
-                            </div>
-                        </div>
-                        <div class="service-content">
-                            <p class="service-description">Professional trademark registration and comprehensive protection services to safeguard your brand identity and intellectual property rights.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service Item 8 -->
-                <div class="service-item" data-delay="800">
-                    <div class="service-card">
-                        <div class="service-content">
-                            <p class="service-description">Professional bookkeeping and comprehensive accounting services to maintain accurate financial records and provide valuable business insights.</p>
-                        </div>
-                        <div class="service-image-container">
-                            <div class="service-glow"></div>
-                            <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
-                                <h3 class="service-title">Bookkeeping and Accounting</h3>
-                            </div>
+                    <div class="hero-text">
+                        <h1 class="hero-title">Helping organizations navigate the future of financial excellence</h1>
+                        <p class="hero-subtitle">
+                            Abhijeet Choubey and Associates is a leading chartered accountancy firm providing expert
+                            financial advisory, audit, and tax services to businesses across industries.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="our-work.html" class="btn ocean-btn">
+                                <span class="description">Our Services</span>
+                                <div class="ocean"></div>
+                            </a>
+                            <a href="contact.html" class="btn blackwave-btn">
+                                <span class="description">Contact Us</span>
+                                <div class="blackwave"></div>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="scroll-indicator">Scroll to explore more services</div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Insights Carousel Section -->
-    <section class="insights-section">
-        <h1 class="glow-text">Industry Insights</h1>
-    
-        <div class="carousel">
-            <div class="carousel__body">
-                <div class="carousel__prev">
-                    <div class="nav-arrow nav-arrow--left"></div>
+
+        <!-- Services Section -->
+        <section class="services-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Core Services</h2>
+                    <p class="section-subtitle">Comprehensive financial and business solutions tailored to your needs
+                    </p>
                 </div>
-                <div class="carousel__next">
-                    <div class="nav-arrow nav-arrow--right"></div>
+                <div class="services-list">
+                    <!-- Service Item 1 -->
+                    <div class="service-item" data-delay="100">
+                        <div class="service-card">
+                            <div class="service-image-container">
+                                <div class="service-glow"></div>
+                                <div class="service-image"
+                                    style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
+                                    <h3 class="service-title">Incorporation Services</h3>
+                                </div>
+                            </div>
+                            <div class="service-content">
+                                <p class="service-description">Complete assistance with company registration, legal
+                                    formalities, and business setup for a smooth start to your entrepreneurial journey.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Item 2 -->
+                    <div class="service-item" data-delay="200">
+                        <div class="service-card">
+                            <div class="service-content">
+                                <p class="service-description">End-to-end GST registration, return filing, and
+                                    compliance services to keep your business on track and compliant with all
+                                    regulations.
+                                </p>
+                            </div>
+                            <div class="service-image-container">
+                                <div class="service-glow"></div>
+                                <div class="service-image"
+                                    style="background-image: url('https://images.unsplash.com/photo-1554224155-3a58922a22c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
+                                    <h3 class="service-title">GST Services</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Item 3 -->
+                    <div class="service-item" data-delay="300">
+                        <div class="service-card">
+                            <div class="service-image-container">
+                                <div class="service-glow"></div>
+                                <div class="service-image"
+                                    style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
+                                    <h3 class="service-title">ROC Compliance</h3>
+                                </div>
+                            </div>
+                            <div class="service-content">
+                                <p class="service-description">Comprehensive ROC filing and compliance services to
+                                    ensure your business meets all regulatory requirements and stays in good standing.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Item 4 -->
+                    <div class="service-item" data-delay="400">
+                        <div class="service-card">
+                            <div class="service-content">
+                                <p class="service-description">Expert assistance with individual and corporate income
+                                    tax return filing, tax planning, and optimization strategies to maximize your
+                                    returns.
+                                </p>
+                            </div>
+                            <div class="service-image-container">
+                                <div class="service-glow"></div>
+                                <div class="service-image"
+                                    style="background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
+                                    <h3 class="service-title">Income Tax Return Filing</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Item 5 -->
+                    <div class="service-item" data-delay="500">
+                        <div class="service-card">
+                            <div class="service-image-container">
+                                <div class="service-glow"></div>
+                                <div class="service-image"
+                                    style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
+                                    <h3 class="service-title">Auditing and Assurance</h3>
+                                </div>
+                            </div>
+                            <div class="service-content">
+                                <p class="service-description">Comprehensive audit and assurance services ensuring
+                                    accuracy, transparency, and compliance in all aspects of your financial reporting
+                                    and operations.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Item 6 -->
+                    <div class="service-item" data-delay="600">
+                        <div class="service-card">
+                            <div class="service-content">
+                                <p class="service-description">Comprehensive project reports tailored for bank loans,
+                                    funding applications, and detailed business planning to support your growth
+                                    initiatives.
+                                </p>
+                            </div>
+                            <div class="service-image-container">
+                                <div class="service-glow"></div>
+                                <div class="service-image"
+                                    style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
+                                    <h3 class="service-title">Project Reports</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Item 7 -->
+                    <div class="service-item" data-delay="700">
+                        <div class="service-card">
+                            <div class="service-image-container">
+                                <div class="service-glow"></div>
+                                <div class="service-image"
+                                    style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
+                                    <h3 class="service-title">Trademarks</h3>
+                                </div>
+                            </div>
+                            <div class="service-content">
+                                <p class="service-description">Professional trademark registration and comprehensive
+                                    protection services to safeguard your brand identity and intellectual property
+                                    rights.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Item 8 -->
+                    <div class="service-item" data-delay="800">
+                        <div class="service-card">
+                            <div class="service-content">
+                                <p class="service-description">Professional bookkeeping and comprehensive accounting
+                                    services to maintain accurate financial records and provide valuable business
+                                    insights.
+                                </p>
+                            </div>
+                            <div class="service-image-container">
+                                <div class="service-glow"></div>
+                                <div class="service-image"
+                                    style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80')">
+                                    <h3 class="service-title">Bookkeeping and Accounting</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="carousel__slider">
-                    <!-- Article 1 -->
-                    <div class="carousel__slider__item">
-                        <div class="item__3d-frame">
-                            <div class="item__3d-frame__box item__3d-frame__box--front">
-                                <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
-                                </div>
-                                <div class="article-content">
-                                    <div class="article-meta">
-                                        <span class="article-source">MIT Technology Review</span>
-                                        <span class="article-date">Dec 2024</span>
-                                    </div>
-                                    <h3 class="article-title">Digital Transformation in Financial Services</h3>
-                                    <p class="article-description">
-                                        Exploring how leading financial institutions are leveraging digital technologies to enhance operational efficiency.
-                                    </p>
-                                    <a href="https://www.technologyreview.com/2024/12/01/1103456/digital-transformation-financial-services/" target="_blank" class="explore-btn">Explore</a>
-                                </div>
-                            </div>
-                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
-                            <div class="item__3d-frame__box item__3d-frame__box--right"></div>
-                        </div>
+                <div class="scroll-indicator">Scroll to explore more services</div>
+            </div>
+        </section>
+
+        <!-- Insights Carousel Section -->
+        <section class="insights-section">
+            <h1 class="glow-text">Industry Insights</h1>
+
+            <div class="carousel">
+                <div class="carousel__body">
+                    <div class="carousel__prev">
+                        <div class="nav-arrow nav-arrow--left"></div>
                     </div>
-    
-                    <!-- Article 2 -->
-                    <div class="carousel__slider__item">
-                        <div class="item__3d-frame">
-                            <div class="item__3d-frame__box item__3d-frame__box--front">
-                                <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
-                                </div>
-                                <div class="article-content">
-                                    <div class="article-meta">
-                                        <span class="article-source">Harvard Business Review</span>
-                                        <span class="article-date">Dec 2024</span>
-                                    </div>
-                                    <h3 class="article-title">AI Agents in Professional Services</h3>
-                                    <p class="article-description">
-                                        How artificial intelligence agents are transforming accounting and professional services industries.
-                                    </p>
-                                    <a href="https://hbr.org/2024/12/ai-agents-professional-services" target="_blank" class="explore-btn">Explore</a>
-                                </div>
-                            </div>
-                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
-                            <div class="item__3d-frame__box item__3d-frame__box--right"></div>
-                        </div>
+                    <div class="carousel__next">
+                        <div class="nav-arrow nav-arrow--right"></div>
                     </div>
-    
-                    <!-- Article 3 -->
-                    <div class="carousel__slider__item">
-                        <div class="item__3d-frame">
-                            <div class="item__3d-frame__box item__3d-frame__box--front">
-                                <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
-                                </div>
-                                <div class="article-content">
-                                    <div class="article-meta">
-                                        <span class="article-source">Forbes</span>
-                                        <span class="article-date">Nov 2024</span>
+                    <div class="carousel__slider">
+                        <!-- Article 1 -->
+                        <div class="carousel__slider__item">
+                            <div class="item__3d-frame">
+                                <div class="item__3d-frame__box item__3d-frame__box--front">
+                                    <div class="article-image"
+                                        style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
                                     </div>
-                                    <h3 class="article-title">Future of Accounting Profession</h3>
-                                    <p class="article-description">
-                                        Why the accounting industry is nothing like you imagine - exploring the dynamic, innovative nature of modern practices.
-                                    </p>
-                                    <a href="https://www.forbes.com/sites/forbesbusinesscouncil/2024/11/15/future-of-accounting-profession/" target="_blank" class="explore-btn">Explore</a>
+                                    <div class="article-content">
+                                        <div class="article-meta">
+                                            <span class="article-source">MIT Technology Review</span>
+                                            <span class="article-date">Dec 2024</span>
+                                        </div>
+                                        <h3 class="article-title">Digital Transformation in Financial Services</h3>
+                                        <p class="article-description">
+                                            Exploring how leading financial institutions are leveraging digital
+                                            technologies to enhance operational efficiency.
+                                        </p>
+                                        <a href="https://www.technologyreview.com/2024/12/01/1103456/digital-transformation-financial-services/"
+                                            target="_blank" class="explore-btn">Explore</a>
+                                    </div>
                                 </div>
+                                <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                                <div class="item__3d-frame__box item__3d-frame__box--right"></div>
                             </div>
-                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
-                            <div class="item__3d-frame__box item__3d-frame__box--right"></div>
                         </div>
-                    </div>
-    
-                    <!-- Article 4 -->
-                    <div class="carousel__slider__item">
-                        <div class="item__3d-frame">
-                            <div class="item__3d-frame__box item__3d-frame__box--front">
-                                <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
-                                </div>
-                                <div class="article-content">
-                                    <div class="article-meta">
-                                        <span class="article-source">McKinsey & Company</span>
-                                        <span class="article-date">Nov 2024</span>
+
+                        <!-- Article 2 -->
+                        <div class="carousel__slider__item">
+                            <div class="item__3d-frame">
+                                <div class="item__3d-frame__box item__3d-frame__box--front">
+                                    <div class="article-image"
+                                        style="background-image: url('https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
                                     </div>
-                                    <h3 class="article-title">AI Strategy for Big Four Leadership</h3>
-                                    <p class="article-description">
-                                        Comprehensive artificial intelligence strategy to maintain competitive advantage in professional services.
-                                    </p>
-                                    <a href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/ai-strategy-professional-services" target="_blank" class="explore-btn">Explore</a>
+                                    <div class="article-content">
+                                        <div class="article-meta">
+                                            <span class="article-source">Harvard Business Review</span>
+                                            <span class="article-date">Dec 2024</span>
+                                        </div>
+                                        <h3 class="article-title">AI Agents in Professional Services</h3>
+                                        <p class="article-description">
+                                            How artificial intelligence agents are transforming accounting and
+                                            professional services industries.
+                                        </p>
+                                        <a href="https://hbr.org/2024/12/ai-agents-professional-services"
+                                            target="_blank" class="explore-btn">Explore</a>
+                                    </div>
                                 </div>
+                                <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                                <div class="item__3d-frame__box item__3d-frame__box--right"></div>
                             </div>
-                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
-                            <div class="item__3d-frame__box item__3d-frame__box--right"></div>
                         </div>
-                    </div>
-    
-                    <!-- Article 5 -->
-                    <div class="carousel__slider__item">
-                        <div class="item__3d-frame">
-                            <div class="item__3d-frame__box item__3d-frame__box--front">
-                                <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
-                                </div>
-                                <div class="article-content">
-                                    <div class="article-meta">
-                                        <span class="article-source">Deloitte Insights</span>
-                                        <span class="article-date">Nov 2024</span>
+
+                        <!-- Article 3 -->
+                        <div class="carousel__slider__item">
+                            <div class="item__3d-frame">
+                                <div class="item__3d-frame__box item__3d-frame__box--front">
+                                    <div class="article-image"
+                                        style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
                                     </div>
-                                    <h3 class="article-title">AI's Impact on Professional Services</h3>
-                                    <p class="article-description">
-                                        How AI will fundamentally transform professional services across all major firms and practices.
-                                    </p>
-                                    <a href="https://www2.deloitte.com/us/en/insights/industry/professional-services/ai-impact-professional-services.html" target="_blank" class="explore-btn">Explore</a>
+                                    <div class="article-content">
+                                        <div class="article-meta">
+                                            <span class="article-source">Forbes</span>
+                                            <span class="article-date">Nov 2024</span>
+                                        </div>
+                                        <h3 class="article-title">Future of Accounting Profession</h3>
+                                        <p class="article-description">
+                                            Why the accounting industry is nothing like you imagine - exploring the
+                                            dynamic, innovative nature of modern practices.
+                                        </p>
+                                        <a href="https://www.forbes.com/sites/forbesbusinesscouncil/2024/11/15/future-of-accounting-profession/"
+                                            target="_blank" class="explore-btn">Explore</a>
+                                    </div>
                                 </div>
+                                <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                                <div class="item__3d-frame__box item__3d-frame__box--right"></div>
                             </div>
-                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
-                            <div class="item__3d-frame__box item__3d-frame__box--right"></div>
                         </div>
-                    </div>
-    
-                    <!-- Article 6 -->
-                    <div class="carousel__slider__item">
-                        <div class="item__3d-frame">
-                            <div class="item__3d-frame__box item__3d-frame__box--front">
-                                <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
-                                </div>
-                                <div class="article-content">
-                                    <div class="article-meta">
-                                        <span class="article-source">Journal of Accountancy</span>
-                                        <span class="article-date">Dec 2024</span>
+
+                        <!-- Article 4 -->
+                        <div class="carousel__slider__item">
+                            <div class="item__3d-frame">
+                                <div class="item__3d-frame__box item__3d-frame__box--front">
+                                    <div class="article-image"
+                                        style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
                                     </div>
-                                    <h3 class="article-title">2025 Accounting Standards Updates</h3>
-                                    <p class="article-description">
-                                        Accounting standards board explores non-GAAP reporting and R&D spending regulations for 2025.
-                                    </p>
-                                    <a href="https://www.journalofaccountancy.com/news/2024/dec/accounting-standards-updates-2025.html" target="_blank" class="explore-btn">Explore</a>
+                                    <div class="article-content">
+                                        <div class="article-meta">
+                                            <span class="article-source">McKinsey & Company</span>
+                                            <span class="article-date">Nov 2024</span>
+                                        </div>
+                                        <h3 class="article-title">AI Strategy for Big Four Leadership</h3>
+                                        <p class="article-description">
+                                            Comprehensive artificial intelligence strategy to maintain competitive
+                                            advantage in professional services.
+                                        </p>
+                                        <a href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/ai-strategy-professional-services"
+                                            target="_blank" class="explore-btn">Explore</a>
+                                    </div>
                                 </div>
+                                <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                                <div class="item__3d-frame__box item__3d-frame__box--right"></div>
                             </div>
-                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
-                            <div class="item__3d-frame__box item__3d-frame__box--right"></div>
                         </div>
-                    </div>
-    
-                    <!-- Article 7 -->
-                    <div class="carousel__slider__item">
-                        <div class="item__3d-frame">
-                            <div class="item__3d-frame__box item__3d-frame__box--front">
-                                <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
-                                </div>
-                                <div class="article-content">
-                                    <div class="article-meta">
-                                        <span class="article-source">CPA Journal</span>
-                                        <span class="article-date">2024</span>
+
+                        <!-- Article 5 -->
+                        <div class="carousel__slider__item">
+                            <div class="item__3d-frame">
+                                <div class="item__3d-frame__box item__3d-frame__box--front">
+                                    <div class="article-image"
+                                        style="background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
                                     </div>
-                                    <h3 class="article-title">Future of Accounting Software: 2025 Trends</h3>
-                                    <p class="article-description">
-                                        Comprehensive analysis of emerging accounting software trends including cloud integration and automation.
-                                    </p>
-                                    <a href="https://www.cpajournal.com/2024/12/15/future-accounting-software-2025-trends/" target="_blank" class="explore-btn">Explore</a>
+                                    <div class="article-content">
+                                        <div class="article-meta">
+                                            <span class="article-source">Deloitte Insights</span>
+                                            <span class="article-date">Nov 2024</span>
+                                        </div>
+                                        <h3 class="article-title">AI's Impact on Professional Services</h3>
+                                        <p class="article-description">
+                                            How AI will fundamentally transform professional services across all major
+                                            firms and practices.
+                                        </p>
+                                        <a href="https://www2.deloitte.com/us/en/insights/industry/professional-services/ai-impact-professional-services.html"
+                                            target="_blank" class="explore-btn">Explore</a>
+                                    </div>
                                 </div>
+                                <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                                <div class="item__3d-frame__box item__3d-frame__box--right"></div>
                             </div>
-                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
-                            <div class="item__3d-frame__box item__3d-frame__box--right"></div>
                         </div>
-                    </div>
-    
-                    <!-- Article 8 -->
-                    <div class="carousel__slider__item">
-                        <div class="item__3d-frame">
-                            <div class="item__3d-frame__box item__3d-frame__box--front">
-                                <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1590402494682-cd3fb53b1f70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
-                                </div>
-                                <div class="article-content">
-                                    <div class="article-meta">
-                                        <span class="article-source">Accounting Today</span>
-                                        <span class="article-date">2024</span>
+
+                        <!-- Article 6 -->
+                        <div class="carousel__slider__item">
+                            <div class="item__3d-frame">
+                                <div class="item__3d-frame__box item__3d-frame__box--front">
+                                    <div class="article-image"
+                                        style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
                                     </div>
-                                    <h3 class="article-title">Top Trends Shaping Accounting in 2025</h3>
-                                    <p class="article-description">
-                                        Expert insights on key trends defining the accounting profession, from technology adoption to changing expectations.
-                                    </p>
-                                    <a href="https://www.accountingtoday.com/news/top-trends-shaping-accounting-industry-2025" target="_blank" class="explore-btn">Explore</a>
+                                    <div class="article-content">
+                                        <div class="article-meta">
+                                            <span class="article-source">Journal of Accountancy</span>
+                                            <span class="article-date">Dec 2024</span>
+                                        </div>
+                                        <h3 class="article-title">2025 Accounting Standards Updates</h3>
+                                        <p class="article-description">
+                                            Accounting standards board explores non-GAAP reporting and R&D spending
+                                            regulations for 2025.
+                                        </p>
+                                        <a href="https://www.journalofaccountancy.com/news/2024/dec/accounting-standards-updates-2025.html"
+                                            target="_blank" class="explore-btn">Explore</a>
+                                    </div>
                                 </div>
+                                <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                                <div class="item__3d-frame__box item__3d-frame__box--right"></div>
                             </div>
-                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
-                            <div class="item__3d-frame__box item__3d-frame__box--right"></div>
                         </div>
-                    </div>
-    
-                    <!-- Article 9 -->
-                    <div class="carousel__slider__item">
-                        <div class="item__3d-frame">
-                            <div class="item__3d-frame__box item__3d-frame__box--front">
-                                <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
-                                </div>
-                                <div class="article-content">
-                                    <div class="article-meta">
-                                        <span class="article-source">TechCrunch</span>
-                                        <span class="article-date">2024</span>
+
+                        <!-- Article 7 -->
+                        <div class="carousel__slider__item">
+                            <div class="item__3d-frame">
+                                <div class="item__3d-frame__box item__3d-frame__box--front">
+                                    <div class="article-image"
+                                        style="background-image: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
                                     </div>
-                                    <h3 class="article-title">Accounting Firm Technology Trends 2025</h3>
-                                    <p class="article-description">
-                                        Discover cutting-edge technologies revolutionizing accounting firms, from AI-powered analytics to blockchain.
-                                    </p>
-                                    <a href="https://techcrunch.com/2024/12/01/accounting-firm-technology-trends-2025/" target="_blank" class="explore-btn">Explore</a>
+                                    <div class="article-content">
+                                        <div class="article-meta">
+                                            <span class="article-source">CPA Journal</span>
+                                            <span class="article-date">2024</span>
+                                        </div>
+                                        <h3 class="article-title">Future of Accounting Software: 2025 Trends</h3>
+                                        <p class="article-description">
+                                            Comprehensive analysis of emerging accounting software trends including
+                                            cloud integration and automation.
+                                        </p>
+                                        <a href="https://www.cpajournal.com/2024/12/15/future-accounting-software-2025-trends/"
+                                            target="_blank" class="explore-btn">Explore</a>
+                                    </div>
                                 </div>
+                                <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                                <div class="item__3d-frame__box item__3d-frame__box--right"></div>
                             </div>
-                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
-                            <div class="item__3d-frame__box item__3d-frame__box--right"></div>
                         </div>
-                    </div>
-    
-                    <!-- Article 10 -->
-                    <div class="carousel__slider__item">
-                        <div class="item__3d-frame">
-                            <div class="item__3d-frame__box item__3d-frame__box--front">
-                                <div class="article-image" style="background-image: url('https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
-                                </div>
-                                <div class="article-content">
-                                    <div class="article-meta">
-                                        <span class="article-source">AICPA</span>
-                                        <span class="article-date">2024</span>
+
+                        <!-- Article 8 -->
+                        <div class="carousel__slider__item">
+                            <div class="item__3d-frame">
+                                <div class="item__3d-frame__box item__3d-frame__box--front">
+                                    <div class="article-image"
+                                        style="background-image: url('https://images.unsplash.com/photo-1590402494682-cd3fb53b1f70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
                                     </div>
-                                    <h3 class="article-title">Advanced Accounting Technology Resources</h3>
-                                    <p class="article-description">
-                                        Comprehensive guide to latest accounting technology tools transforming modern practices and workflows.
-                                    </p>
-                                    <a href="https://www.aicpa.org/resources/tools/technology-resources" target="_blank" class="explore-btn">Explore</a>
+                                    <div class="article-content">
+                                        <div class="article-meta">
+                                            <span class="article-source">Accounting Today</span>
+                                            <span class="article-date">2024</span>
+                                        </div>
+                                        <h3 class="article-title">Top Trends Shaping Accounting in 2025</h3>
+                                        <p class="article-description">
+                                            Expert insights on key trends defining the accounting profession, from
+                                            technology adoption to changing expectations.
+                                        </p>
+                                        <a href="https://www.accountingtoday.com/news/top-trends-shaping-accounting-industry-2025"
+                                            target="_blank" class="explore-btn">Explore</a>
+                                    </div>
                                 </div>
+                                <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                                <div class="item__3d-frame__box item__3d-frame__box--right"></div>
                             </div>
-                            <div class="item__3d-frame__box item__3d-frame__box--left"></div>
-                            <div class="item__3d-frame__box item__3d-frame__box--right"></div>
+                        </div>
+
+                        <!-- Article 9 -->
+                        <div class="carousel__slider__item">
+                            <div class="item__3d-frame">
+                                <div class="item__3d-frame__box item__3d-frame__box--front">
+                                    <div class="article-image"
+                                        style="background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
+                                    </div>
+                                    <div class="article-content">
+                                        <div class="article-meta">
+                                            <span class="article-source">TechCrunch</span>
+                                            <span class="article-date">2024</span>
+                                        </div>
+                                        <h3 class="article-title">Accounting Firm Technology Trends 2025</h3>
+                                        <p class="article-description">
+                                            Discover cutting-edge technologies revolutionizing accounting firms, from
+                                            AI-powered analytics to blockchain.
+                                        </p>
+                                        <a href="https://techcrunch.com/2024/12/01/accounting-firm-technology-trends-2025/"
+                                            target="_blank" class="explore-btn">Explore</a>
+                                    </div>
+                                </div>
+                                <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                                <div class="item__3d-frame__box item__3d-frame__box--right"></div>
+                            </div>
+                        </div>
+
+                        <!-- Article 10 -->
+                        <div class="carousel__slider__item">
+                            <div class="item__3d-frame">
+                                <div class="item__3d-frame__box item__3d-frame__box--front">
+                                    <div class="article-image"
+                                        style="background-image: url('https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); background-size: cover; background-position: center;">
+                                    </div>
+                                    <div class="article-content">
+                                        <div class="article-meta">
+                                            <span class="article-source">AICPA</span>
+                                            <span class="article-date">2024</span>
+                                        </div>
+                                        <h3 class="article-title">Advanced Accounting Technology Resources</h3>
+                                        <p class="article-description">
+                                            Comprehensive guide to latest accounting technology tools transforming
+                                            modern practices and workflows.
+                                        </p>
+                                        <a href="https://www.aicpa.org/resources/tools/technology-resources"
+                                            target="_blank" class="explore-btn">Explore</a>
+                                    </div>
+                                </div>
+                                <div class="item__3d-frame__box item__3d-frame__box--left"></div>
+                                <div class="item__3d-frame__box item__3d-frame__box--right"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    
 
-    </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2 class="cta-heading">Ready to Transform Your Financial Future?</h2>
-                <p class="cta-subheading">Let our team of experts help you achieve your financial goals with comprehensive and customized solutions.</p>
-                <a href="contact.html" class="btn btn-primary cta-animated-btn">
-  <span></span>
-  <span></span>
-  <span></span>
-  <span></span>
-  Get Started Today
-</a>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2 class="cta-heading">Ready to Transform Your Financial Future?</h2>
+                    <p class="cta-subheading">Let our team of experts help you achieve your financial goals with
+                        comprehensive and customized solutions.</p>
+                    <a href="contact.html" class="btn btn-primary cta-animated-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span> Get Started Today
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Abhijeet Choubey and Associates</h3>
-                    <p>Trusted financial partners for business growth and compliance.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="our-work.html">Our Services</a></li>
-                        <li><a href="our-people.html">Our People</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>Jigani APC Circle, Bangalore, Karnataka 560105</p>
-                    <p>Email: caabhijeetchouby@gmail.com</p>
-                    <p>Phone: +91 81607 12491</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Follow Us</h4>
-                    <div class="social-buttons">
-                        <!-- Facebook -->
-                        <a href="https://www.facebook.com/profile.php?id=61578097903089" class="social-button social-button--facebook" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <!-- LinkedIn -->
-                        <a href="https://www.linkedin.com/in/abhijeet-chouby-and-associates" class="social-button social-button--linkedin" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <!-- Email -->
-                        <a href="mailto:caabhijeetchouby@gmail.com" class="social-button social-button--mail" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>Abhijeet Choubey and Associates</h3>
+                        <p>Trusted financial partners for business growth and compliance.</p>
                     </div>
-    <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="abhijeet-chouby-and-associates" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://in.linkedin.com/in/abhijeet-chouby-and-associates?trk=profile-badge">Abhijeet Chouby and Associates</a>
-    </div>
-              
-    <script>
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "https://platform.linkedin.com/badges/js/profile.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'linkedin-badge-js'));
-    </script>
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="our-work.html">Our Services</a></li>
+                            <li><a href="our-people.html">Our People</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Contact</h4>
+                        <p>Jigani APC Circle, Bangalore, Karnataka 560105</p>
+                        <p>Email: caabhijeetchouby@gmail.com</p>
+                        <p>Phone: +91 81607 12491</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Follow Us</h4>
+                        <div class="social-buttons">
+                            <!-- Facebook -->
+                            <a href="https://www.facebook.com/profile.php?id=61578097903089"
+                                class="social-button social-button--facebook" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/in/abhijeet-chouby-and-associates"
+                                class="social-button social-button--linkedin" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <!-- Email -->
+                            <a href="mailto:caabhijeetchouby@gmail.com" class="social-button social-button--mail"
+                                aria-label="Email">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                        <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium"
+                            data-theme="dark" data-type="VERTICAL" data-vanity="abhijeet-chouby-and-associates"
+                            data-version="v1"><a class="badge-base__link LI-simple-link"
+                                href="https://in.linkedin.com/in/abhijeet-chouby-and-associates?trk=profile-badge">Abhijeet
+                                Chouby and Associates</a>
+                        </div>
+
+                        <script>
+                            (function (d, s, id) {
+                                var js, fjs = d.getElementsByTagName(s)[0];
+                                if (d.getElementById(id)) return;
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = "https://platform.linkedin.com/badges/js/profile.js";
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }(document, 'script', 'linkedin-badge-js'));
+                        </script>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Abhijeet Choubey and Associates. All rights reserved. Developed by Arpit Sharma</p>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Abhijeet Choubey and Associates. All rights reserved. Developed by Arpit Sharma</p>
-            </div>
-        </div>
-    </footer>
+        </footer>
     </div>
     <!-- Scripts -->
     <script src="js/aurora.js"></script>
-    
+
     <!-- Service Section Animations -->
     <script>
         // Intersection Observer for bidirectional scroll animations
@@ -787,7 +964,7 @@
             threshold: 0.3,
             rootMargin: '0px 0px -20px 0px'
         };
-        
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -807,7 +984,7 @@
         document.querySelectorAll('.service-item').forEach(item => {
             observer.observe(item);
         });
-        
+
         // Hide scroll indicator when scrolling
         let scrollIndicator = document.querySelector('.scroll-indicator');
         window.addEventListener('scroll', () => {
@@ -817,22 +994,145 @@
                 scrollIndicator.style.opacity = '0.8';
             }
         });
-        
+
         // Smooth scrolling for better UX
         document.addEventListener('DOMContentLoaded', () => {
             document.documentElement.style.scrollBehavior = 'smooth';
         });
-        </script>
-<script src="js/script.js"></script>
-<script src="js/insights-carousel.js"></script>
-<script>
-  window.addEventListener('load', function() {
-    setTimeout(function() {
-      document.getElementById('loader').style.display = 'none';
-      document.getElementById('main-content').style.display = 'block';
-    }, 2000); // 2 seconds
-  });
-</script>
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const navMenu = document.querySelector('.nav-menu');
+
+            if (!menuButton || !navMenu) {
+                console.error('Menu button or nav menu not found');
+                return;
+            }
+
+            console.log('Menu elements found:', {
+                menuButton,
+                navMenu
+            });
+
+            // Ensure initial state
+            navMenu.classList.remove('active');
+
+            // Define icons
+            const hamburgerIcon = `
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="currentColor"/>
+                </svg>`;
+
+            const closeIcon = `
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/>
+                </svg>`;
+
+            menuButton.innerHTML = hamburgerIcon;
+
+            function closeMenu() {
+                navMenu.classList.remove('active');
+                menuButton.innerHTML = hamburgerIcon;
+                console.log('Menu closed');
+            }
+
+            function toggleMenu() {
+                console.log('Toggle menu clicked');
+                navMenu.classList.toggle('active');
+
+                if (navMenu.classList.contains('active')) {
+                    menuButton.innerHTML = closeIcon;
+                    console.log('Menu opened');
+                } else {
+                    closeMenu();
+                }
+            }
+
+            // Add click event listener
+            menuButton.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleMenu();
+            });
+
+            // Close menu when nav links are clicked
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', function () {
+                    closeMenu();
+                });
+            });
+
+            // Close menu on window resize to desktop size
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 992) {
+                    closeMenu();
+                }
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function (event) {
+                const isClickInsideNav = navMenu.contains(event.target);
+                const isClickOnButton = menuButton.contains(event.target);
+
+                if (!isClickInsideNav && !isClickOnButton && navMenu.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (navbar) {
+                if (window.scrollY > 50) {
+                    navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+                    navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+                } else {
+                    navbar.style.background = 'transparent';
+                    navbar.style.boxShadow = 'none';
+                }
+            }
+        });
+
+        // Active navigation link highlighting
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+
+                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNavLink);
+    </script>
+    </script>
+    <script src="js/script.js"></script>
+    <script src="js/insights-carousel.js"></script>
+    <script>
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.getElementById('loader').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            }, 2000); // 2 seconds
+        });
+    </script>
 
 </body>
+
 </html>

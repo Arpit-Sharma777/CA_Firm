@@ -1,28 +1,91 @@
-// Mobile Navigation Toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+document.addEventListener('DOMContentLoaded', function() {
+    const menuButton = document.getElementById('mobile-menu-button');
+    const navMenu = document.querySelector('.nav-menu');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
+    /* Re-create menu items if markup is empty (mobile view may wipe innerHTML) */
+    if (navMenu && navMenu.children.length === 0) {
+        navMenu.innerHTML = `
+            <li class="nav-item"><a class="nav-link" href="index.html">Overview</a></li>
+            <li class="nav-item"><a class="nav-link" href="our-work.html">Our Work</a></li>
+            <li class="nav-item"><a class="nav-link active" href="our-people.html">Our People</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>`;
+    }
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-}));
+    if (!menuButton || !navMenu) {
+        console.error('Menu button or nav menu not found');
+        return;
+    }
 
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+    // Ensure initial state
+    navMenu.classList.remove('active', 'show'); // ensure both are cleared
+    menuButton.innerHTML = `
+        <svg viewBox="0 0 24 24" width="24" height="24">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="currentColor"/>
+        </svg>`;
+
+    // Define closeMenu function outside the loop
+    function closeMenu() {
+        navMenu.classList.remove('show');
+        menuButton.innerHTML = `
+            <svg viewBox="0 0 24 24" width="24" height="24">
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" fill="currentColor"/>
+            </svg>`;
+    }
+
+    function toggleMenu() {
+        navMenu.classList.toggle('show');
+        if (navMenu.classList.contains('show')) {
+            /* Inline mobile-panel styles (does NOT change desktop navbar) */
+            Object.assign(navMenu.style, {
+                position: 'fixed',
+                top: '80px',
+                left: '0',
+                width: '100%',
+                background: 'rgba(0,0,0,0.95)',
+                backdropFilter: 'blur(10px)',
+                display: 'flex',
+                flexDirection: 'column',
+                padding: '20px 24px',
+                zIndex: '2000',
+                maxHeight: 'none',
+                overflow: 'visible',
+                opacity: '1',
+                visibility: 'visible'
             });
+            menuButton.innerHTML = `
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" fill="currentColor"/>
+                </svg>`;
+        } else {
+            navMenu.removeAttribute('style');
+            closeMenu();
+        }
+    }
+
+    // Remove existing listeners to prevent duplicates
+    menuButton.removeEventListener('click', toggleMenu);
+    menuButton.addEventListener('click', toggleMenu);
+
+    // Close the menu when any nav link is clicked
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.removeEventListener('click', closeMenu); // Remove any existing listeners
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Close menu on window resize to desktop size
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 992) {
+            closeMenu();
+        }
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInsideNav = navMenu.contains(event.target);
+        const isClickOnButton = menuButton.contains(event.target);
+
+        if (!isClickInsideNav && !isClickOnButton && navMenu.classList.contains('show')) {
+            closeMenu();
         }
     });
 });
@@ -30,34 +93,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-        navbar.style.boxShadow = 'none';
+    if (navbar) {
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(0, 0, 0, 0.98)';
+            navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.2)';
+        } else {
+            navbar.style.background = 'transparent';
+            navbar.style.boxShadow = 'none';
+        }
     }
 });
 
-// Removed contact form submit handler to avoid conflict with inline handler in contact.html
-
+// Form validation function
 function validateForm(data) {
     const requiredFields = ['name', 'email', 'phone', 'subject', 'message'];
     let isValid = true;
-    
+
     // Remove any existing error messages
     document.querySelectorAll('.error-message').forEach(msg => msg.remove());
-    
+
     requiredFields.forEach(field => {
         const input = document.querySelector(`[name="${field}"]`);
         const value = data[field];
-        
+
         if (!value || value.trim() === '') {
             showError(input, `${field.charAt(0).toUpperCase() + field.slice(1)} is required`);
             isValid = false;
         }
     });
-    
+
     // Email validation
     if (data.email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -67,7 +131,7 @@ function validateForm(data) {
             isValid = false;
         }
     }
-    
+
     // Phone validation
     if (data.phone) {
         const phoneRegex = /^[+]?[\d\s\-\(\)]{10,}$/;
@@ -77,7 +141,7 @@ function validateForm(data) {
             isValid = false;
         }
     }
-    
+
     return isValid;
 }
 
@@ -88,10 +152,10 @@ function showError(input, message) {
     errorDiv.style.fontSize = '14px';
     errorDiv.style.marginTop = '5px';
     errorDiv.textContent = message;
-    
+
     input.parentNode.appendChild(errorDiv);
     input.style.borderColor = '#e53e3e';
-    
+
     // Remove error styling when user starts typing
     input.addEventListener('input', function() {
         this.style.borderColor = '#e5e5e5';
@@ -117,9 +181,9 @@ function showSuccessMessage() {
         animation: slideIn 0.3s ease;
     `;
     successDiv.textContent = 'Thank you! Your message has been sent successfully.';
-    
+
     document.body.appendChild(successDiv);
-    
+
     setTimeout(() => {
         successDiv.remove();
     }, 5000);
@@ -158,8 +222,8 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.service-card, .team-card, .insight-card, .why-point');
-    
+    const animateElements = document.querySelectorAll('.service-card, .team-card, .insight-card');
+
     animateElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
@@ -168,45 +232,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Initialize Google Map (placeholder function)
-function initMap() {
-    // This would typically initialize a Google Map
-    // For now, we'll create a placeholder
-    const mapContainer = document.getElementById('map');
-    if (mapContainer) {
-        mapContainer.innerHTML = `
-            <div style="
-                height: 100%;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: white;
-                font-size: 18px;
-                text-align: center;
-            ">
-                <div>
-                    <div style="font-size: 48px; margin-bottom: 10px;">📍</div>
-                    <p>Interactive Map Location</p>
-                    <p style="font-size: 14px; opacity: 0.8;">Abhijeet Choubey and Associates Office</p>
-                </div>
-            </div>
-        `;
-    }
-}
-
 // Call initMap when page loads
 document.addEventListener('DOMContentLoaded', initMap);
 
 // Counter animation for statistics (if present)
 function animateCounters() {
     const counters = document.querySelectorAll('.counter');
-    
+
     counters.forEach(counter => {
         const target = parseInt(counter.getAttribute('data-target'));
         const increment = target / 100;
         let current = 0;
-        
+
         const updateCounter = () => {
             if (current < target) {
                 current += increment;
@@ -216,7 +253,7 @@ function animateCounters() {
                 counter.textContent = target;
             }
         };
-        
+
         updateCounter();
     });
 }
@@ -225,7 +262,7 @@ function animateCounters() {
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const parallax = document.querySelector('.hero');
-    
+
     if (parallax) {
         const speed = scrolled * 0.5;
         parallax.style.transform = `translateY(${speed}px)`;
@@ -236,18 +273,18 @@ window.addEventListener('scroll', () => {
 function updateActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
-    
+
     let current = '';
-    
+
     sections.forEach(section => {
         const sectionTop = section.offsetTop - 100;
         const sectionHeight = section.clientHeight;
-        
+
         if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
             current = section.getAttribute('id');
         }
     });
-    
+
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === `#${current}`) {
