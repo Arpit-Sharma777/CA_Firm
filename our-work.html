@@ -68,6 +68,55 @@
             font-family: 'Inter', 'Merriweather' !important;
         }
 
+          /* WhatsApp Widget Styles */
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .whatsapp-btn {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.2);
+            /* Reduced opacity */
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.3);
+            /* Reduced opacity */
+            color: white;
+            text-decoration: none;
+        }
+
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3), 0 0 0 10px rgba(37, 211, 102, 0.1);
+            }
+
+            100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.2);
+            }
+        }
+
         /* Animated Background */
         .animated-bg {
             position: fixed;
@@ -1467,6 +1516,12 @@
                 <div class="shape"></div>
                 <div class="shape"></div>
             </div>
+        </div>
+
+            <div class="whatsapp-widget">
+            <a href="https://wa.me/918160712491" target="_blank" class="whatsapp-btn" title="Chat on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
         </div>
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg">

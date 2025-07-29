@@ -7,7 +7,8 @@
     <title>Abhijeet Choubey and Associates - Chartered Accountants</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/services-new.css">
     <link rel="stylesheet" href="css/insights-carousel.css">
@@ -95,7 +96,54 @@
         .hero-title {
             font-family: 'Inter', 'Merriweather', sans-serif;
         }
+  /* WhatsApp Widget Styles */
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
 
+        .whatsapp-btn {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.2);
+            /* Reduced opacity */
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.3);
+            /* Reduced opacity */
+            color: white;
+            text-decoration: none;
+        }
+
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3), 0 0 0 10px rgba(37, 211, 102, 0.1);
+            }
+
+            100% {
+                box-shadow: 0 4px 20px rgba(37, 211, 102, 0.2);
+            }
+        }
         /* Loader CSS start */
 
         .loader-container {
@@ -334,15 +382,15 @@
         }
 
         .glass-bg {
-            position: absolute;
-            width: 160px;
-            height: 160px;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 50%;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            animation: glassRotate 8s linear infinite;
-        }
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: glassRotate 8s linear infinite;
+}
 
         @keyframes glassRotate {
             0% {
@@ -358,14 +406,14 @@
             }
         }
 
-        .glow {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: glow 4s ease-in-out infinite;
-        }
+      .glow {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 80%);
+    border-radius: 50%;
+    animation: glow 4s ease-in-out infinite;
+}
 
         @keyframes glow {
 
@@ -381,13 +429,15 @@
             }
         }
 
-         a[href^="tel:"] {
+        a[href^="tel:"] {
             text-decoration: none;
             color: inherit;
         }
-        
+
 
         /* Loader CSS end */
+
+      
     </style>
 </head>
 
@@ -438,6 +488,12 @@
                 </button>
             </div>
         </header>
+
+        <div class="whatsapp-widget">
+            <a href="https://wa.me/918160712491" target="_blank" class="whatsapp-btn" title="Chat on WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
         <!-- Hero Section with Aurora Background -->
         <section class="hero">
             <canvas id="aurora-bg"></canvas>
@@ -946,8 +1002,9 @@
                         <h4>Contact</h4>
                         <p>Jigani APC Circle, Bangalore, Karnataka 560105</p>
                         <p>Email: caabhijeetchouby@gmail.com</p>
-                        <p>Phone:<a href="tel: +91 81607 12491"> +91 81607 12491</a> / <a href="tel: +91 80 2244 0267"> +91 80 2244 0267</a></p>
-                       
+                        <p>Phone:<a href="tel: +91 81607 12491"> +91 81607 12491</a> / <a href="tel: +91 80 2244 0267">
+                                +91 80 2244 0267</a></p>
+
                     </div>
                     <div class="footer-section">
                         <h4>Follow Us</h4>
@@ -983,7 +1040,7 @@
                                 js.id = id;
                                 js.src = "https://platform.linkedin.com/badges/js/profile.js";
                                 fjs.parentNode.insertBefore(js, fjs);
-                        }(document, 'script', 'linkedin-badge-js'));
+                            }(document, 'script', 'linkedin-badge-js'));
                         </script>
                     </div>
                 </div>
